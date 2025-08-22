@@ -1,6 +1,29 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Vedic Center - Hindu Temple Leadership & History in Mauldin, SC",
+  description: "Learn about the Vedic Center of Greenville's history, mission, and dedicated leadership team. Meet our trustees, priests, and community leaders serving the Hindu community since our founding.",
+  keywords: ["Vedic Center history", "Hindu temple leadership", "temple trustees", "Hindu priests Greenville", "temple board members", "Indian community leaders"],
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: "About Vedic Center of Greenville - Our History & Leadership",
+    description: "Learn about our temple's history, mission, and dedicated leadership team serving the Hindu community in the Greenville-Spartanburg area.",
+    url: '/about',
+    images: [
+      {
+        url: '/og-about.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Vedic Center Leadership Team',
+      },
+    ],
+  },
+};
 
 export default function AboutPage() {
   const boardMembers = [
@@ -162,7 +185,8 @@ export default function AboutPage() {
       phone: "864-275-6799",
       availability: "All Days (8:30 AM - 2:30 PM)",
       bio: "Dedicated priest serving the community with traditional Vedic rituals and daily temple services.",
-      image: "/placeholder.svg?height=200&width=200",
+      image:
+        "https://fidkgecvcirowrvzeyju.supabase.co/storage/v1/object/public/vcofg/priest_bharat_bhai.jpeg",
     },
     {
       id: 2,
@@ -171,7 +195,8 @@ export default function AboutPage() {
       phone: "864-365-7280",
       availability: "All Days (12:00 PM - 6:00 PM)",
       bio: "Experienced priest conducting pujas, ceremonies, and spiritual guidance for devotees.",
-      image: "/placeholder.svg?height=200&width=200",
+      image:
+        "https://fidkgecvcirowrvzeyju.supabase.co/storage/v1/object/public/vcofg/priest_prateek.jpeg",
     },
     {
       id: 3,
@@ -180,7 +205,8 @@ export default function AboutPage() {
       phone: "864-275-6804",
       availability: "All Days (2:30 PM - 8:00 PM)",
       bio: "Devoted priest providing evening services and spiritual guidance to the temple community.",
-      image: "/placeholder.svg?height=200&width=200",
+      image:
+        "https://fidkgecvcirowrvzeyju.supabase.co/storage/v1/object/public/vcofg/priest_pramod-bhai.jpeg",
     },
   ];
 
@@ -648,6 +674,93 @@ export default function AboutPage() {
         </TabsContent>
       </Tabs>
 
+      <section>
+        <h2 className="text-2xl font-bold text-orange-800 mb-6">Our Priests</h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {priests.map((priest) => (
+            <Card key={priest.id} className="border-orange-200">
+              <div className="flex items-center p-6">
+                <div className="mr-4">
+                  <div className="h-16 w-16 rounded-full overflow-hidden">
+                    <Image
+                      src={priest.image || "/placeholder.svg"}
+                      alt={priest.name}
+                      width={64}
+                      height={64}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-orange-900">
+                    {priest.name}
+                  </h3>
+                  <p className="text-sm text-orange-600">{priest.role}</p>
+                  {priest.phone && (
+                    <p className="text-sm text-orange-700 mt-1">
+                      <strong>Phone:</strong>{" "}
+                      <a
+                        href={`tel:${priest.phone}`}
+                        className="hover:text-orange-600"
+                      >
+                        {priest.phone}
+                      </a>
+                    </p>
+                  )}
+                </div>
+              </div>
+              <CardContent className="pt-0">
+                <p className="text-sm text-orange-800 mb-3">{priest.bio}</p>
+                {priest.availability && (
+                  <div className="bg-orange-50 p-3 rounded-md">
+                    <p className="text-sm font-semibold text-orange-800">
+                      Availability:
+                    </p>
+                    <p className="text-sm text-orange-700">
+                      {priest.availability}
+                    </p>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="mt-8 bg-orange-50 p-6 rounded-lg">
+          <h3 className="text-lg font-semibold text-orange-900 mb-3">
+            Priest Services
+          </h3>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div>
+              <h4 className="font-medium text-orange-800 mb-2">
+                Temple Services
+              </h4>
+              <ul className="text-sm text-orange-700 space-y-1">
+                <li>• Daily aarti and darshan</li>
+                <li>• Special festival pujas</li>
+                <li>• Abhishekam ceremonies</li>
+                <li>• Bhajan and kirtan sessions</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-medium text-orange-800 mb-2">
+                Personal Services
+              </h4>
+              <ul className="text-sm text-orange-700 space-y-1">
+                <li>• Wedding ceremonies</li>
+                <li>• Housewarming (Griha Pravesh)</li>
+                <li>• Sacred thread ceremonies</li>
+                <li>• Other religious ceremonies</li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-sm text-orange-600 mt-4">
+            <strong>Note:</strong> For personal ceremonies and special requests,
+            please contact the priests directly during their availability hours.
+          </p>
+        </div>
+      </section>
+
       {/* Board Members Section */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold text-orange-800 mb-6">
@@ -771,94 +884,6 @@ export default function AboutPage() {
               </ul>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Priests Section */}
-      <section>
-        <h2 className="text-2xl font-bold text-orange-800 mb-6">Our Priests</h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {priests.map((priest) => (
-            <Card key={priest.id} className="border-orange-200">
-              <div className="flex items-center p-6">
-                <div className="mr-4">
-                  <div className="h-16 w-16 rounded-full overflow-hidden">
-                    <Image
-                      src={priest.image || "/placeholder.svg"}
-                      alt={priest.name}
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-orange-900">
-                    {priest.name}
-                  </h3>
-                  <p className="text-sm text-orange-600">{priest.role}</p>
-                  {priest.phone && (
-                    <p className="text-sm text-orange-700 mt-1">
-                      <strong>Phone:</strong>{" "}
-                      <a
-                        href={`tel:${priest.phone}`}
-                        className="hover:text-orange-600"
-                      >
-                        {priest.phone}
-                      </a>
-                    </p>
-                  )}
-                </div>
-              </div>
-              <CardContent className="pt-0">
-                <p className="text-sm text-orange-800 mb-3">{priest.bio}</p>
-                {priest.availability && (
-                  <div className="bg-orange-50 p-3 rounded-md">
-                    <p className="text-sm font-semibold text-orange-800">
-                      Availability:
-                    </p>
-                    <p className="text-sm text-orange-700">
-                      {priest.availability}
-                    </p>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="mt-8 bg-orange-50 p-6 rounded-lg">
-          <h3 className="text-lg font-semibold text-orange-900 mb-3">
-            Priest Services
-          </h3>
-          <div className="grid gap-4 md:grid-cols-2">
-            <div>
-              <h4 className="font-medium text-orange-800 mb-2">
-                Temple Services
-              </h4>
-              <ul className="text-sm text-orange-700 space-y-1">
-                <li>• Daily aarti and darshan</li>
-                <li>• Special festival pujas</li>
-                <li>• Abhishekam ceremonies</li>
-                <li>• Bhajan and kirtan sessions</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium text-orange-800 mb-2">
-                Personal Services
-              </h4>
-              <ul className="text-sm text-orange-700 space-y-1">
-                <li>• Wedding ceremonies</li>
-                <li>• Housewarming (Griha Pravesh)</li>
-                <li>• Sacred thread ceremonies</li>
-                <li>• Other religious ceremonies</li>
-              </ul>
-            </div>
-          </div>
-          <p className="text-sm text-orange-600 mt-4">
-            <strong>Note:</strong> For personal ceremonies and special requests,
-            please contact the priests directly during their availability hours.
-          </p>
         </div>
       </section>
     </div>

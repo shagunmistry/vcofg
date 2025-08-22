@@ -3,6 +3,29 @@ import Image from "next/image"
 import { Calendar, Clock, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Hindu Temple & Spiritual Center in Mauldin, SC",
+  description: "Welcome to Vedic Center of Greenville - a vibrant Hindu temple and spiritual center serving the Greenville-Spartanburg area. Daily worship, cultural events, and community services.",
+  keywords: ["Hindu temple Greenville", "Hindu temple Spartanburg", "Indian temple Mauldin SC", "Hindu worship services", "cultural programs", "spiritual center"],
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "Vedic Center of Greenville - Hindu Temple & Spiritual Center",
+    description: "Welcome to our vibrant Hindu temple and spiritual center serving the Greenville-Spartanburg area. Join us for daily worship, cultural events, and community services.",
+    url: '/',
+    images: [
+      {
+        url: '/og-home.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Vedic Center of Greenville Temple Building',
+      },
+    ],
+  },
+}
 
 export default function Home() {
   // Sample upcoming events
