@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Vedic Center of Greenville",
-  description: "A spiritual center for Hindu culture and traditions in Greenville",
+  description: "Hindu temple and spiritual center serving the Greenville-Spartanburg area. Located in Mauldin, SC. Daily worship, cultural programs, and community services.",
 }
 
 export default function RootLayout({

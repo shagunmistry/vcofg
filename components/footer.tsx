@@ -13,15 +13,15 @@ export default function Footer() {
           <div className="space-y-2 text-sm">
             <div className="flex items-center">
               <MapPin className="h-5 w-5 mr-2" />
-              <span>123 Temple Street, Greenville, SC 29601</span>
+              <span>520 Bethel Dr, Mauldin, SC 29662</span>
             </div>
             <div className="flex items-center">
               <Phone className="h-5 w-5 mr-2" />
-              <span>(123) 456-7890</span>
+              <span>(864) 967-2852</span>
             </div>
             <div className="flex items-center">
               <Mail className="h-5 w-5 mr-2" />
-              <span>info@vediccentergreenville.org</span>
+              <span>vediccentergg@gmail.com</span>
             </div>
           </div>
         </div>

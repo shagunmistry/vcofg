@@ -9,22 +9,22 @@ export default function Home() {
   const upcomingEvents = [
     {
       id: 1,
-      title: "Diwali Celebration",
-      date: "November 12, 2025",
-      time: "6:00 PM - 10:00 PM",
-      description: "Join us for a grand Diwali celebration with puja, cultural performances, and dinner.",
+      title: "Daily Aarti & Darshan",
+      date: "Every Day",
+      time: "8:30 AM - 8:00 PM",
+      description: "Join us for daily prayers and darshan. Temple hours are 8:30 AM to 8:00 PM daily.",
     },
     {
       id: 2,
-      title: "Yoga & Meditation Workshop",
-      date: "May 15, 2025",
-      time: "9:00 AM - 12:00 PM",
-      description: "Learn traditional yoga and meditation techniques from our experienced gurus.",
+      title: "Diwali Celebration",
+      date: "November 2025",
+      time: "6:00 PM - 10:00 PM",
+      description: "Grand Diwali celebration with puja, cultural performances, and community dinner.",
     },
     {
       id: 3,
       title: "Holi Festival",
-      date: "March 25, 2025",
+      date: "March 2025",
       time: "11:00 AM - 4:00 PM",
       description: "Celebrate the festival of colors with music, dance, and traditional food.",
     },
@@ -49,7 +49,7 @@ export default function Home() {
               Vedic Center of Greenville
             </h1>
             <p className="mt-6 max-w-lg mx-auto text-xl text-orange-100">
-              A spiritual sanctuary promoting Hindu culture, traditions, and values
+              Hindu temple serving the Greenville-Spartanburg area with daily worship, cultural programs, and community services
             </p>
             <div className="mt-10 flex justify-center gap-x-6">
               <Button className="bg-orange-600 hover:bg-orange-700 text-white">
@@ -72,8 +72,7 @@ export default function Home() {
               Our Spiritual Community
             </p>
             <p className="mt-4 max-w-2xl text-xl text-orange-800 lg:mx-auto">
-              The Vedic Center of Greenville is dedicated to preserving and promoting Hindu culture, traditions, and
-              spiritual practices.
+              Located in Mauldin, SC, the Vedic Center of Greenville serves the Hindu community throughout the Greenville-Spartanburg area with daily worship services, cultural programs, and spiritual guidance.
             </p>
           </div>
 
@@ -162,7 +161,7 @@ export default function Home() {
                     </div>
                     <div className="flex items-center">
                       <MapPin className="h-4 w-4 mr-2 text-orange-600" />
-                      <span>Vedic Center of Greenville</span>
+                      <span>520 Bethel Dr, Mauldin, SC</span>
                     </div>
                   </div>
                 </CardContent>

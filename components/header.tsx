@@ -8,13 +8,13 @@ import { cn } from "@/lib/utils"
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "E-Samachar Signup", href: "/e-samachar" },
-  { name: "Events", href: "/events" },
-  { name: "Services", href: "/services" },
-  { name: "Idols", href: "/idols" },
-  { name: "VC Membership", href: "/membership" },
   { name: "About Us", href: "/about" },
-  { name: "Vedic Center Donations", href: "/donations" },
+  { name: "Services", href: "/services" },
+  { name: "Events", href: "/events" },
+  { name: "Idols", href: "/idols" },
+  { name: "Contact", href: "/contact" },
+  { name: "Membership", href: "/membership" },
+  { name: "E-Samachar", href: "/e-samachar" },
 ]
 
 export default function Header() {
